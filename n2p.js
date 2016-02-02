@@ -1,6 +1,6 @@
 // n2p.js
 // Infix to postfix
-// Written by Jake Henderson
+// Jake Henderson
 
 module.exports = {
   inFixToPostFix: function(input) {
@@ -52,14 +52,14 @@ module.exports = {
 
     // Checks if a character is an operator
     function checkForOperator(str) {
-      var Operators = ["=", ">", "|", "&", "!", "("];
+      var Ops = ["=", ">", "|", "&", "!", "("];
       // Check for closed parenthesis
       if(str == ")") {
         return 0;
       }
       // Check if any other operators
-      for(var i = 0; i < Operators.length; i++) {
-        if(str == Operators[i]) {
+      for(var i = 0; i < Ops.length; i++) {
+        if(str == Ops[i]) {
           return 1;
         }
       }
