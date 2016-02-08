@@ -1,16 +1,20 @@
 // eval.js
 // Evaluates postfix to a truth table
 // Jake Henderson
+
 module.exports = {
   printTable: function(input, orig) {
     var Variables = [];
     var VariableLetters = [];
     var rows = 0;
 
-    for(var i = 0; i < input.length; i++) {
-      if(checkForOperator(input[i]) < 0) {
+    var temp = input;
+    for(var i = 0; i < temp.length; i++) {
+      if(checkForOperator(temp[i]) < 0) {
         Variables.push(0);
-        VariableLetters.push(input[i]);
+        VariableLetters.push(temp[i]);
+        var repl = new RegExp(temp[i], "gi");
+        temp = temp.replace(repl, "|");
       }
     }
     rows = Math.pow(2, Variables.length);
