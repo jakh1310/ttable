@@ -6,7 +6,7 @@ module.exports = {
   inFixToPostFix: function(input) {
     // Variables
     var postFix = "";
-    var prec = {"=": 0, ">": 1, "|": 2, "&": 3, "!": 4, "(": 0};
+    var prec = {"=": 0, ">": 1, "|": 2, "&": 3, "!": 4, "(": 10};
 
     // Replace all implies and biconditionals with single characters
     input = input.replace(/<->/g, '=').replace(/->/g, '>');
